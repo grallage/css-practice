@@ -1,2 +1,2 @@
 # css practices
-Just some css demo code
+Just some css demo codes
