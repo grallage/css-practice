@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  align-items: center;
+  /* grid-auto-rows: 200px;
+  grid-auto-columns: 300px; */
+  grid-template-areas:
+    "image-section-one"
+    "title"
+    "image-section-two"
+    "text";
+}
+
+@media (min-width: 40em) {
+  .container {
+    grid-template-areas:
+      "image-section-one image-section-one image-section-one"
+      "title text text"
+      "image-section-two image-section-two image-section-two";
+  }
+}
+
+.container h1 {
+  grid-area: title;
+  background-color: rgba(127, 255, 212, 0.5);
+  font-size: 4rem;
+  color: white;
+  padding: 2rem;
+  text-shadow: 0 0 1rem rgb(0 0 0 / 0.2);
+  z-index: 1;
+}
+
+.container p {
+  grid-area: text;
+  background: black;
+  padding: 1em;
+  color: white;
+}
+
+.container img {
+  grid-column: 1 / 3;
+  grid-row: image-section-one / image-section-two;
+  /* grid-row: image-section-one-start / image-section-two-end; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
